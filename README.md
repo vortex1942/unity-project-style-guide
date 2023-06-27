@@ -110,10 +110,10 @@ _DynamicObjects     // Parent for all objects instantiated at runtime.
 
 ## Coding Standard (C#)
 
-Avoid public variables, use [SerializeField] Where possible
-Take time deciding on variable names
-Do Not use acronyms or abbreviations
-Do Not use single letter names (except for loop iterators)
+- Avoid public variables, use [SerializeField] Where possible
+- Take time deciding on variable names
+- Do Not use acronyms or abbreviations
+- Do Not use single letter names (except for loop iterators)
 
   Example:
 
