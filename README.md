@@ -110,15 +110,45 @@ _DynamicObjects     // Parent for all objects instantiated at runtime.
 
 ## Coding Standard (C#)
 
-Use _camelCase_ for fields and variables. _Fields_ have a leading underscore to distinguish them from local variables.
+Avoid public variables, use [SerializeField] Where possible
+Take time deciding on variable names
+Do Not use acronyms or abbreviations
+Do Not use single letter names (except for loop iterators)
 
   Example:
 
-  ```CSharp
-  private RigidBody _rigidBody;  // Field.
+```csharp
+public class myCodeStyle : MonoBehaviour {
 
-  var int length; // Local variable. 
-  ```
+    // Constants: Upper Case SnakeCase
+    public const int CONSTANT_FIELD = 56;
+
+    // Properties: PascalCase
+    public static MyCodeStyle Instance { get; private set; }
+
+    // Events: PascalCase
+    public event EventHandler OnSomethingHappened;
+
+    //Fields: camelCase
+    private float memberVariable;
+
+    // Function names: Pascalcase
+    private void Awake() {
+        Instance = this;
+        
+        DoSomething(10f);
+    }
+
+    // Function Params: camelCase
+    private void DoSomething(float time) {
+        // Do something...
+        memberVariable = time + Time.deltaTime
+        if (memberVariable > 0) {
+            // Do something else...
+        }
+    }
+}
+```
 
 ---
 
